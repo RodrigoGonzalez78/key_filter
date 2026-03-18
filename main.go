@@ -14,7 +14,7 @@ var correcciones = map[uint16]uint16{
 	evdev.KEY_T: evdev.KEY_Y, // ty -> t
 	evdev.KEY_F: evdev.KEY_H, // fh -> f
 	evdev.KEY_G: evdev.KEY_H, // gh -> g
-	evdev.KEY_N: evdev.KEY_V, // nv -> n
+	evdev.KEY_V: evdev.KEY_N, // vn -> v
 	evdev.KEY_B: evdev.KEY_N, // bn -> b
 	evdev.KEY_4: evdev.KEY_6, // 46 -> 4
 	evdev.KEY_5: evdev.KEY_6, // 56 -> 5
@@ -62,7 +62,7 @@ func main() {
 	var ultimoTiempo time.Time
 
 	// Milisegundos de tolerancia (ajústalo si escribes muy rápido o muy lento)
-	umbral := 30 * time.Millisecond
+	umbral := 45 * time.Millisecond
 
 	for {
 		event, err := device.ReadOne()
